@@ -23,12 +23,14 @@ jobs:
         with:
           version: nightly
 
+      - name: Install pnpm
+        uses: pnpm/action-setup
+
       - name: Install dev dependencies
         run: pnpm deps:install
 
       - name: Run lint check
         run: npm run lint:check
-
 
       - name: Run Forge build
         run: |
