@@ -1,26 +1,34 @@
-name: test
-
-on: workflow_dispatch
-
-env:
-  FOUNDRY_PROFILE: ci
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  check:
+  run-ci:
     strategy:
       fail-fast: true
 
     name: Foundry project
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           submodules: recursive
+      - uses: actions/setup-node@v2
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
+
+      - name: Install dev dependencies
+        run: pnpm deps:install
+
+      - name: Run lint check
+        run: npm run lint:check
+
 
       - name: Run Forge build
         run: |
@@ -28,7 +36,5 @@ jobs:
           forge build --sizes
         id: build
 
-      - name: Run Forge tests
-        run: |
-          forge test -vvv
-        id: test
+      - name: Run tests
+        run: forge test -vvv
