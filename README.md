@@ -2,9 +2,9 @@
 
 A simple project template that uses foundry with hardhat and allows writing tests or scripts in both typescript and solidity, along with linting.
 
-Cloning the repo:
+Creating a project:
 ```bash
-git clone https://github.com/apoorvsingal/foundry-hardhat-template
+forge init --template https://github.com/apoorvsingal/foundry-hardhat-template
 ```
 
 Installing dependencies:
