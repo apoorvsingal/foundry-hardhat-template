@@ -25,6 +25,8 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
+        with:
+          version: 7.29.3
 
       - name: Install dev dependencies
         run: pnpm deps:install
