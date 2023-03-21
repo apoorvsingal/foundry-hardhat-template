@@ -7,14 +7,14 @@
     "deps:install": "forge install && pnpm install",
     "test:hardhat": "hardhat test",
     "test:foundry": "forge test -vvv",
-    "test": "pnpm run test:hardhat && pnpm run test:foundry",
+    "test": "pnpm run test:hardhat \n pnpm run test:foundry",
     "prettier": "prettier --write 'contracts/**/*.sol' 'test/**/*.sol' 'scripts/**/*.sol' 'mocks/**/*.sol' 'test/**/*.ts' 'scripts/**/*.ts'",
     "prettier:list": "prettier --list-different 'contracts/**/*.sol' 'test/**/*.sol' 'mocks/**/*.sol' 'scripts/**/*.sol' 'test/**/*.ts' 'scripts/**/*.ts'",
     "prettier:check": "prettier --check 'contracts/**/*.sol' 'test/**/*.sol' 'test/**/*.ts' 'scripts/**/*.sol' 'scripts/**/*.ts'",
     "solhint": "solhint --config ./.solhint.json 'contracts/**/*.sol' 'test/**/*.sol' 'mocks/**/*.sol' 'scripts/**/*.sol' --fix",
     "solhint:check": "solhint --config ./.solhint.json  'contracts/**/*.sol' 'test/**/*.sol' 'mocks/**/*.sol' 'scripts/**/*.sol'",
-    "lint": "pnpm run prettier && pnpm run solhint",
-    "lint:check": "pnpm run prettier:check && pnpm run solhint:check"
+    "lint": "pnpm run prettier \n pnpm run solhint",
+    "lint:check": "pnpm run prettier:check \n pnpm run solhint:check"
   },
   "keywords": [],
   "author": "Apoorv <apoorvsingal0@gmail.com> (https://libkakashi.repl.co/)",
