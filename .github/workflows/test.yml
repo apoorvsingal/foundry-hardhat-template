@@ -24,7 +24,7 @@ jobs:
           version: nightly
 
       - name: Install pnpm
-        uses: pnpm/action-setup
+        uses: pnpm/action-setup@v2
 
       - name: Install dev dependencies
         run: pnpm deps:install
